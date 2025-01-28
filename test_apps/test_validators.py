@@ -1,9 +1,9 @@
 import unittest
 
-from ..apps.validators import Validators
+from apps.validators import Validators
 
 
-class TesteIdentfValidatord(unittest.TestCase):
+class Testvalidatoridentifier(unittest.TestCase):
 
     def test_validator_min_limit(self):
         result = Validators.check_valid_identifier(self, "aaa")
@@ -32,6 +32,8 @@ class TesteIdentfValidatord(unittest.TestCase):
     def test_validator_especial_caractere(self):
         result = Validators.check_valid_identifier(self, "ddd@")
         self.assertFalse(result)
+
+
 
 
 if __name__ == '__main__':
