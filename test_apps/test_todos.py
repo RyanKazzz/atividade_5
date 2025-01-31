@@ -18,8 +18,7 @@ class todo_test(unittest.TestCase):
         self.page.goto("https://vanilton.net/web-test/todos/#/")
         self.page.get_by_placeholder("What needs to be done?").fill("meu Primeiro Todo")
         self.page.get_by_placeholder("What needs to be done?").press("Enter")
-        self.assertTrue(self.page.locator(".view label",has_text="meu Primeiro Todo").is_visible())
-        self.assertEqual(self.page.locator(".view label"), 'meu Primeiro Todo')
+        self.assertEqual(self.page.locator(".view label").inner_text(), "meu Primeiro Todo")
 
 
     def tearDown(self) -> None:
